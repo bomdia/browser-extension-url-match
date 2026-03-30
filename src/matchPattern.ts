@@ -35,6 +35,7 @@ function _matchPattern(options: MatchPatternOptions) {
 			: {
 					valid: true,
 					match: val,
+					index: (url: string | URL) => val(url) ? 0 : -1,
 					get examples() {
 						return (
 							getExampleUrls(pattern, combinedOptions)
@@ -81,6 +82,17 @@ export function matchPattern(
 				]
 			},
 			match: (url: string | URL) => matchers.some((m) => m.match(url)),
+			index: (url: string | URL) => {
+				let i = 0
+				for(const m of matchers){
+					const res = m.match(url)
+					if(res) {
+						return i
+					}
+					i++	
+				}
+				return -1
+			},
 			patterns,
 			config: options,
 			assertValid,
