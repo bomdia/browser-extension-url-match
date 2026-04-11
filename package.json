@@ -1,6 +1,6 @@
 {
 	"name": "browser-extension-url-match",
-	"version": "1.2.0",
+	"version": "1.2.2",
 	"description": "Browser extension URL pattern matching",
 	"main": "dist/index.js",
 	"scripts": {
@@ -9,10 +9,10 @@
 		"prepare": "jest && rm -rf dist && npm run build"
 	},
 	"types": "dist/index.d.ts",
-	"author": "https://github.com/lionel-rowe",
+	"author": "https://github.com/bomdia",
 	"license": "MIT",
 	"repository": {
-		"url": "https://github.com/lionel-rowe/browser-extension-url-match"
+		"url": "https://github.com/bomdia/browser-extension-url-match"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.12.10",

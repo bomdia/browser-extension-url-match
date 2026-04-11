@@ -1,4 +1,5 @@
 export type MatchFn = (url: string | URL) => boolean
+export type IndexFn = (url: string | URL) => number
 
 type Assertable = {
 	/**
@@ -13,6 +14,7 @@ export type Matcher = Readonly<
 	Assertable & {
 		valid: true
 		match: MatchFn
+		index: IndexFn
 		patterns: string[]
 		examples: string[]
 		config: MatchPatternOptions
